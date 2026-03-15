@@ -1,0 +1,23 @@
+# robots.txt for SizanNumberIO
+# This file tells search engine bots which parts of the site they can crawl
+
+# User-agent: * means this applies to all search engines (Google, Bing, etc.)
+User-agent: *
+
+# Allow all search engines to crawl everything
+# (Since this is a public website, we want full indexing)
+Allow: /
+
+# But don't allow them to crawl certain paths
+# Disallow: /admin/     # If you had admin pages
+# Disallow: /private/   # If you had private sections
+
+# Specify the location of your sitemap
+# This helps search engines find all your pages
+Sitemap: https://sizannumberio.github.io/sitemap.xml
+
+# Crawl delay - be nice to our server (optional)
+# Crawl-delay: 10
+
+# Host directive (optional, helps with canonical URLs)
+Host: https://sizannumberio.github.io
