@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SizanNumberIO - Temporary Number Generator</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="SizanNumberIO - Generate temporary virtual numbers for SMS verification. Free temporary phone numbers for online verification.">
+    <meta name="keywords" content="temporary number, virtual number, SMS verification, fake number, temp number">
+    <meta name="author" content="SizanNumberIO">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sizannumberio.github.io/">
+    <meta property="og:title" content="SizanNumberIO - Temporary Number Generator">
+    <meta property="og:description" content="Free temporary virtual numbers for SMS verification">
+    <meta property="og:image" content="images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sizannumberio.github.io/">
+    <meta property="twitter:title" content="SizanNumberIO - Temporary Number Generator">
+    <meta property="twitter:description" content="Free temporary virtual numbers for SMS verification">
+    <meta property="twitter:image" content="images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">
+                    <img src="images/logo.png" alt="SizanNumberIO Logo" height="40">
+                    <span>SizanNumberIO</span>
+                </a>
+                
+                <div class="nav-right">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#generator">Generator</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Welcome to <span class="gradient-text">SizanNumberIO</span></h1>
+                <p class="subtitle">Generate temporary virtual numbers for SMS verification instantly</p>
+                <p class="description">Protect your privacy with our secure temporary phone numbers. Perfect for online verifications, registrations, and more.</p>
+                
+                <div class="stats" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalUsers">50K+</span>
+                        <span class="stat-label">Happy Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalNumbers">100K+</span>
+                        <span class="stat-label">Numbers Generated</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="countries">50+</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image" data-aos="fade-left">
+                <img src="images/hero-illustration.svg" alt="Hero Illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- Generator Section -->
+    <section id="generator" class="generator">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Number Generator</h2>
+            
+            <div class="generator-card" data-aos="zoom-in">
+                <div class="card-header">
+                    <h3><i class="fas fa-phone-alt"></i> Generate Temporary Number</h3>
+                </div>
+                
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="country">Select Country</label>
+                        <select id="country" class="form-control">
+                            <option value="">Choose a country</option>
+                            <option value="us">United States (+1)</option>
+                            <option value="uk">United Kingdom (+44)</option>
+                            <option value="ca">Canada (+1)</option>
+                            <option value="au">Australia (+61)</option>
+                            <option value="in">India (+91)</option>
+                            <option value="bd">Bangladesh (+880)</option>
+                            <option value="pk">Pakistan (+92)</option>
+                            <option value="ae">UAE (+971)</option>
+                            <option value="sa">Saudi Arabia (+966)</option>
+                            <option value="eg">Egypt (+20)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Select Service</label>
+                        <select id="service" class="form-control">
+                            <option value="">Choose a service</option>
+                            <option value="gmail">Gmail</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="whatsapp">WhatsApp</option>
+                            <option value="telegram">Telegram</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="twitter">Twitter</option>
+                            <option value="amazon">Amazon</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="binance">Binance</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="type">Number Type</label>
+                        <select id="type" class="form-control">
+                            <option value="temporary">Temporary (1 hour)</option>
+                            <option value="daily">Daily (24 hours)</option>
+                            <option value="weekly">Weekly (7 days)</option>
+                            <option value="monthly">Monthly (30 days)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group captcha-group">
+                        <div class="captcha-box">
+                            <span id="captchaCode"></span>
+                            <button class="refresh-captcha" onclick="refreshCaptcha()">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                        <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" class="form-control">
+                    </div>
+                    
+                    <button class="generate-btn" onclick="generateNumber()" id="generateBtn">
+                        <i class="fas fa-magic"></i> Generate Number
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Generated Number Display -->
+            <div class="generated-number-card" id="generatedNumberCard" style="display: none;">
+                <div class="number-display">
+                    <h4>Your Temporary Number</h4>
+                    <div class="number-box">
+                        <span id="generatedNumber">+1 (555) 123-4567</span>
+                        <button class="copy-btn" onclick="copyNumber()">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="timer">
+                        <i class="far fa-clock"></i>
+                        <span id="timer">60:00</span>
+                    </div>
+                    
+                    <div class="sms-box" id="smsBox">
+                        <h5>Received SMS</h5>
+                        <div class="sms-list" id="smsList">
+                            <!-- SMS will be shown here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="history">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Your History</h2>
+            
+            <div class="history-card" data-aos="fade-up">
+                <div class="history-filters">
+                    <input type="text" id="historySearch" placeholder="Search numbers..." class="form-control">
+                    <select id="historyFilter" class="form-control">
+                        <option value="all">All</option>
+                        <option value="active">Active</option>
+                        <option value="expired">Expired</option>
+                    </select>
+                    <button class="clear-btn" onclick="clearHistory()">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                </div>
+                
+                <div class="history-list" id="historyList">
+                    <!-- History items will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Why Choose SizanNumberIO?</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="flip-left">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privacy Protected</h3>
+                    <p>Keep your real number private. Use temporary numbers for all verifications.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Generation</h3>
+                    <p>Get your temporary number in seconds. No waiting, no hassle.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>50+ Countries</h3>
+                    <p>Choose from numbers in over 50 countries worldwide.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>SMS Reception</h3>
+                    <p>Receive SMS messages directly on our platform.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>History Tracking</h3>
+                    <p>Keep track of all your generated numbers and messages.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="flip-left" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-free-code-camp"></i>
+                    </div>
+                    <h3>100% Free</h3>
+                    <p>All basic features are completely free to use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Simple Pricing</h2>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card" data-aos="zoom-in">
+                    <div class="pricing-badge">Free</div>
+                    <h3>Basic</h3>
+                    <div class="price">$0<span>/month</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 5 numbers per day</li>
+                        <li><i class="fas fa-check"></i> 1 hour validity</li>
+                        <li><i class="fas fa-check"></i> SMS reception</li>
+                        <li><i class="fas fa-check"></i> Basic support</li>
+                        <li><i class="fas fa-times"></i> Priority access</li>
+                        <li><i class="fas fa-times"></i> API access</li>
+                    </ul>
+                    <button class="pricing-btn">Get Started</button>
+                </div>
+                
+                <div class="pricing-card popular" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="pricing-badge">Popular</div>
+                    <h3>Pro</h3>
+                    <div class="price">$9.99<span>/month</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 50 numbers per day</li>
+                        <li><i class="fas fa-check"></i> 7 days validity</li>
+                        <li><i class="fas fa-check"></i> SMS reception</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Priority access</li>
+                        <li><i class="fas fa-times"></i> API access</li>
+                    </ul>
+                    <button class="pricing-btn">Get Started</button>
+                </div>
+                
+                <div class="pricing-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="pricing-badge">Enterprise</div>
+                    <h3>Business</h3>
+                    <div class="price">$29.99<span>/month</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Unlimited numbers</li>
+                        <li><i class="fas fa-check"></i> 30 days validity</li>
+                        <li><i class="fas fa-check"></i> SMS reception</li>
+                        <li><i class="fas fa-check"></i> 24/7 support</li>
+                        <li><i class="fas fa-check"></i> Priority access</li>
+                        <li><i class="fas fa-check"></i> API access</li>
+                    </ul>
+                    <button class="pricing-btn">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>What is a temporary number?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A temporary number is a virtual phone number that you can use for a short period to receive SMS verifications without using your real number.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>How long do numbers last?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Free numbers last for 1 hour. Premium users can get numbers that last up to 30 days.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Is it really free?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Basic features are completely free. We offer premium plans for advanced features.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Can I receive SMS?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, all numbers can receive SMS. Messages appear in real-time in your dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Get in Touch</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> support@sizannumberio.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Business Ave, New York, NY 10001</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contactForm" onsubmit="return sendMessage(event)">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo.png" alt="SizanNumberIO" height="30">
+                    <p>Your trusted temporary number generator for online privacy and security.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#generator">Generator</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for updates and offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 SizanNumberIO. All rights reserved. | Made with <i class="fas fa-heart" style="color: #ff4757;"></i> for privacy</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/generator.js"></script>
+    <script src="js/history.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
